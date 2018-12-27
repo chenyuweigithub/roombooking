@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ <constant name="struts.i18n.encoding" value="utf-8" />
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="login" class="LoginAction">
+			<result name="success">index.jsp</result>
+			<result name="error">error.jsp</result>			
+		</action>
+    	<action name="register" class="LoginAction" method="register">
+			<result name="success">index.jsp</result>
+			<result name="error">error.jsp</result>			
+		</action>
+		<action name="logout" class="LoginAction"  method="logout">
+			<result name="success">index.jsp</result>
+			<result name="error">error.jsp</result>			
+		</action>
+		<action name="updatepwd" class="LoginAction"  method="updatepwd">
+			<result name="success">index.jsp</result>
+			<result name="error">updatepwd.jsp</result>			
+		</action>
+		<action name="updateMessage" class="LoginAction"  method="updateMessage">
+			<result name="success">index.jsp</result>
+			<result name="error">updateMessage.jsp</result>	
+		</action>
+		
+		<action name="index" class="index">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="Message" class="index">
+			<result name="success">Message.jsp</result>
+		</action>
+		<action name="browseCatalog" class="RoomAction" method="browseCatalog">
+			<result name="success">menu.jsp</result>
+		</action>
+		<action name="browseAllroom" class="RoomAction" method="browseAllroomPaging">
+			<result name="success">browseRoom.jsp</result>
+		</action>
+		<action name="browseAllroombycatalog" class="RoomAction" method="getallroomPagingbycatalog">
+			<result name="success">browseRoombycatalog.jsp</result>
+		</action>
+		<action name="getRequiredBookbyHqlPaging" class="RoomAction" method="getRequiredBookbyHqlPaging">
+			<result name="success">browseRoombyHql.jsp</result>
+			<result name="error">browseRoombyHql.jsp</result>
+		</action>
+		<action name="getRoombyid" class="RoomAction" method="getRoombyid">
+			<result name="success">booking.jsp</result>
+		</action>
+		<action name="detailed" class="RoomAction" method="getRoombyid">
+			<result name="success">detailed.jsp</result>
+		</action>
+		<action name="upload" class="RoomAction" method="upload">
+			<result name="success">success.jsp</result>
+			<result name="usernull">login.jsp</result>
+		</action>
+		<action name="deleteRoombyid" class="RoomAction" method="deleteRoombyid">
+			<result name="success">success.jsp</result>
+			<result name="usernull">login.jsp</result>
+		</action>
+		
+		<action name="getallroomPagingbySeller" class="RoomAction" method="getallroomPagingbySeller">
+			<result name="success">browseMyRoom.jsp</result>
+			<result name="usernull">login.jsp</result>
+		</action>
+		
+		
+		<action name="checkout" class="OrderAction" method="checkout">
+			<result name="success">success.jsp</result>
+			<result name="usernull">login.jsp</result>
+		</action>
+		<action name="getOrderbyuserid" class="OrderAction" method="getOrderbyuserid">
+			<result name="success">showOrder.jsp</result>
+			<result name="usernull">login.jsp</result>
+		</action>
+		<action name="getMyOrderbysellerid" class="OrderAction" method="getMyOrderbysellerid">
+			<result name="success">MyOrder.jsp</result>
+			<result name="usernull">login.jsp</result>
+		</action>
+		<action name="updatestatus" class="OrderAction" method="updatestatus">
+			<result name="success">updateMyOrdersuccess.jsp</result>
+			<result name="usernull">login.jsp</result>
+		</action>
+		<action name="updatereason" class="OrderAction" method="updatereason">
+			<result name="success">updateMyOrdersuccess.jsp</result>
+			<result name="usernull">login.jsp</result>
+		</action>
+    </package>
+</struts>    
